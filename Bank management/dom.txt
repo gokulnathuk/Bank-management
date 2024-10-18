@@ -1,0 +1,85 @@
+package main;
+import java.util.*;
+
+class account{
+	private String acno;
+	private String acname;
+	private double balance;
+	private double balence;
+
+public account(String acno,String acname) {
+	this.acno=acno;
+	this.acname=acname;
+	this.balance=0.0;
+}
+public String getacno() {
+	return acno;
+}
+public String getacname() {
+	return acname;
+}
+public double getbalance() {
+	return balance;
+}
+public void deposit(double amount) {
+	if(amount>0) {
+		balance=balance + amount;
+		System.out.print("Deposited:" + amount);
+	}
+		else {
+			System.out.print("Invalid deposit amount");
+		}
+}
+public void widthdraw(double amount) {
+	if(amount>0 && balance >= amount) {
+		balence = balance - amount;
+		System.out.print("Withdraw:" +amount);
+	}else {
+		System.out.print("Invalid withdraw amount");
+	}
+}
+
+public class Bank {
+    public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    	Object system;
+		Scanner sc = new Scanner(system.in);
+    	System.out.print("Enter the Account number");
+    	String acno = Sc.nextline();
+    	System.out.print("Enter Account holder name");
+    	String acname=sc.nextLine();
+    	account ac = new account(acno,acname);
+    	while(true) {
+        	System.out.print("Banking menu");
+        	System.out.print("1.Checking balance");
+        	System.out.print("2.Desposit money");
+        	System.out.print("3.Withdraw money");
+        	System.out.print("4.Exit");
+        	in ch = sc.nextInt();
+        	Switch(ch){
+        		case1:
+        			System.out.print("Balance" + ac.getbalance());
+        		    break;
+        		case2:
+        			System.out.print("Enter amount to deposit");
+        		    double da = sc.nextDouble();
+        		    ac.deposit(da);
+        		    break;
+        		case3:
+        			System.out.print("Enter amount withdraw");
+        		    double wa = sc.nextDouble(wa);
+        		    break;
+        		 case4:
+        		    System.out.print("Exit");
+        		    Sc.close();
+        		    System.out.print(0);
+        		    break;
+        		  default:
+        		    System.out.print("Invalid choises");
+        	}
+    	}
+
+	}
+
+}
+}
